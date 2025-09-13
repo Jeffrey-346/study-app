@@ -14,3 +14,5 @@ backend/firebase-key.json
 # build files
 frontend/build/
 backend/dist/
+
+.DS_Store

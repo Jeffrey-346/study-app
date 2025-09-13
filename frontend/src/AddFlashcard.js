@@ -5,29 +5,27 @@ function AddFlashcard({ onAdd }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:4000/flashcards", { question, answer });
-    onAdd(res.data);
+    if (!question || !answer) return;
+    onAdd({ question, answer });
     setQuestion("");
     setAnswer("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
+      <input
         type="text"
         placeholder="Question"
         value={question}
-        onChange={e => setQuestion(e.target.value)}
-        required
+        onChange={(e) => setQuestion(e.target.value)}
       />
-      <input 
+      <input
         type="text"
         placeholder="Answer"
         value={answer}
-        onChange={e => setAnswer(e.target.value)}
-        required
+        onChange={(e) => setAnswer(e.target.value)}
       />
       <button type="submit">Add Flashcard</button>
     </form>

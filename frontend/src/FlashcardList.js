@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 
-function FlashcardList() {
-  const [flashcards, setFlashcards] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:4000/flashcards")
-      .then(res => setFlashcards(res.data))
-      .catch(err => console.error(err));
-  }, []);
-
+function FlashcardList({ flashcards }) {
   return (
     <div>
       <h2>Flashcards</h2>
