@@ -1,0 +1,37 @@
+/* App.css */
+
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 10;
+  padding: 0;
+}
+
+/* Root App container */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  background-color: rgb(32, 147, 255);
+  color: #ffffff;              
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;           /* makes children align in a row */
+  align-items: center;     /* vertically centers them relative to each other */
+  gap: 10px;               /* space between image and text */
+}
+
+.header h1 {
+  margin: 0;               /* remove default margin */
+}
+
+.image {
+  margin: 19px;
+  width: 60px;             
+  object-fit:contain;  
+  overflow: hidden;
+  border-radius: 10px;
+}

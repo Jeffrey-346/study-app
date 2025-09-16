@@ -48,6 +48,24 @@ app.get("/flashcards/test", (req, res) => {
   res.send("Backend is running!");
 });
 
+// Delete a flashcard by ID
+app.delete("/flashcards/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const docRef = db.collection("flashcards").doc(id);
+
+    const doc = await docRef.get();
+    if (!doc.exists) {
+      return res.status(404).send({ message: "Flashcard not found" });
+    }
+
+    await docRef.delete();
+    res.send({ message: `Flashcard ${id} deleted successfully` });
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));

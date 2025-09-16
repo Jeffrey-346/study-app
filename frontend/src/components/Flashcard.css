@@ -1,0 +1,44 @@
+.flashcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.flashcard {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #3939bd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 5px 5px 4px rgba(0,0,0,1);
+  word-wrap: break-word;
+}
+
+.flashcard h3 {
+    color: white;
+}
+
+.flashcard p {
+    color: gray;
+}
+
+.flashcard button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #fb2323;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.flashcard button:hover {
+  background-color: #960000;
+}
